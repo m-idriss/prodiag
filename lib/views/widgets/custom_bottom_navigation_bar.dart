@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:prodiag/views/utils/AppColor.dart';
+import 'package:prodiag/views/utils/app_color.dart';
 
 // ignore: must_be_immutable
 class CustomBottomNavigationBar extends StatefulWidget {
@@ -10,7 +10,7 @@ class CustomBottomNavigationBar extends StatefulWidget {
       {super.key, required this.selectedIndex, required this.onItemTapped});
 
   @override
-  _CustomBottomNavigationBarState createState() =>
+  State<CustomBottomNavigationBar> createState() =>
       _CustomBottomNavigationBarState();
 }
 

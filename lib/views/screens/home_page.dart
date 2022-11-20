@@ -5,7 +5,7 @@ import 'package:prodiag/views/screens/delicious_today_page.dart';
 import 'package:prodiag/views/screens/newly_posted_page.dart';
 import 'package:prodiag/views/screens/profile_page.dart';
 import 'package:prodiag/views/screens/search_page.dart';
-import 'package:prodiag/views/utils/AppColor.dart';
+import 'package:prodiag/views/utils/app_color.dart';
 import 'package:prodiag/views/widgets/custom_app_bar.dart';
 import 'package:prodiag/views/widgets/dummy_search_bar.dart';
 import 'package:prodiag/views/widgets/featured_recipe_card.dart';
@@ -16,6 +16,8 @@ class HomePage extends StatelessWidget {
   final List<Recipe> featuredRecipe = RecipeHelper.featuredRecipe;
   final List<Recipe> recommendationRecipe = RecipeHelper.recommendationRecipe;
   final List<Recipe> newlyPostedRecipe = RecipeHelper.newlyPostedRecipe;
+
+  HomePage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,8 +27,8 @@ class HomePage extends StatelessWidget {
         showProfilePhoto: true,
         profilePhoto: const AssetImage('assets/images/profile.jpg'),
         profilePhotoOnPressed: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => ProfilePage()));
+          Navigator.of(context).push(
+              MaterialPageRoute(builder: (context) => const ProfilePage()));
         },
       ),
       body: ListView(
@@ -50,7 +52,7 @@ class HomePage extends StatelessWidget {
                     DummySearchBar(
                       routeTo: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => SearchPage()));
+                            builder: (context) => const SearchPage()));
                       },
                     ),
                     // Delicious Today - Header
@@ -74,11 +76,11 @@ class HomePage extends StatelessWidget {
                               Navigator.of(context).push(MaterialPageRoute(
                                   builder: (context) => DeliciousTodayPage()));
                             },
-                            child: const Text('see all'),
                             style: TextButton.styleFrom(
                                 foregroundColor: Colors.white,
                                 textStyle: const TextStyle(
                                     fontWeight: FontWeight.w400, fontSize: 14)),
+                            child: const Text('see all'),
                           ),
                         ],
                       ),
@@ -125,7 +127,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 // Content
-                Container(
+                SizedBox(
                   height: 174,
                   child: ListView.separated(
                     shrinkWrap: true,

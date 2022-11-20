@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:prodiag/models/core/recipe.dart';
 import 'package:prodiag/models/helper/recipe_helper.dart';
-import 'package:prodiag/views/utils/AppColor.dart';
+import 'package:prodiag/views/utils/app_color.dart';
 import 'package:prodiag/views/widgets/recipe_tile.dart';
 
 class NewlyPostedPage extends StatelessWidget {
   final TextEditingController searchInputController = TextEditingController();
   final List<Recipe> newlyPostedRecipe = RecipeHelper.newlyPostedRecipe;
+
+  NewlyPostedPage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,13 +17,13 @@ class NewlyPostedPage extends StatelessWidget {
         backgroundColor: AppColor.primary,
         centerTitle: true,
         elevation: 0,
-        title: Text('Newly Posted',
+        title: const Text('Newly Posted',
             style: TextStyle(
                 fontFamily: 'inter',
                 fontWeight: FontWeight.w400,
                 fontSize: 16)),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios, color: Colors.white),
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
           onPressed: () {
             Navigator.of(context).pop();
           },
@@ -29,12 +31,12 @@ class NewlyPostedPage extends StatelessWidget {
         systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       body: ListView.separated(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         shrinkWrap: true,
         itemCount: newlyPostedRecipe.length,
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         separatorBuilder: (context, index) {
-          return SizedBox(height: 16);
+          return const SizedBox(height: 16);
         },
         itemBuilder: (context, index) {
           return RecipeTile(

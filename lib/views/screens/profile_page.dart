@@ -2,10 +2,12 @@ import 'package:prodiag/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:prodiag/views/utils/AppColor.dart';
+import 'package:prodiag/views/utils/app_color.dart';
 import 'package:prodiag/views/widgets/user_info_tile.dart';
 
 class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,13 +15,13 @@ class ProfilePage extends StatelessWidget {
         backgroundColor: AppColor.primary,
         elevation: 0,
         centerTitle: true,
-        title: Text('My Profile',
+        title: const Text('My Profile',
             style: TextStyle(
                 fontFamily: 'inter',
                 fontWeight: FontWeight.w400,
                 fontSize: 16)),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios, color: Colors.white),
+          icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
           onPressed: () {
             Navigator.of(context).pop();
           },
@@ -27,29 +29,29 @@ class ProfilePage extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () {},
-            child: Text(
+            style: TextButton.styleFrom(
+                foregroundColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(100))),
+            child: const Text(
               'Edit',
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 14,
                   fontWeight: FontWeight.w600),
             ),
-            style: TextButton.styleFrom(
-                foregroundColor: Colors.white,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(100))),
           ),
         ],
         systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       body: ListView(
         shrinkWrap: true,
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         children: [
           // Section 1 - Profile Picture Wrapper
           Container(
             color: AppColor.primary,
-            padding: EdgeInsets.symmetric(vertical: 24),
+            padding: const EdgeInsets.symmetric(vertical: 24),
             child: GestureDetector(
               onTap: () {
                 info('Code to open file manager');
@@ -61,12 +63,12 @@ class ProfilePage extends StatelessWidget {
                   Container(
                     width: 130,
                     height: 130,
-                    margin: EdgeInsets.only(bottom: 15),
+                    margin: const EdgeInsets.only(bottom: 15),
                     decoration: BoxDecoration(
                       color: Colors.grey,
                       borderRadius: BorderRadius.circular(100),
                       // Profile Picture
-                      image: DecorationImage(
+                      image: const DecorationImage(
                           image: AssetImage('assets/images/profile.jpg'),
                           fit: BoxFit.cover),
                     ),
@@ -74,12 +76,12 @@ class ProfilePage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Change Profile Picture',
+                      const Text('Change Profile Picture',
                           style: TextStyle(
                               fontFamily: 'inter',
                               fontWeight: FontWeight.w600,
                               color: Colors.white)),
-                      SizedBox(width: 8),
+                      const SizedBox(width: 8),
                       SvgPicture.asset('assets/icons/camera.svg',
                           color: Colors.white),
                     ],
@@ -90,29 +92,29 @@ class ProfilePage extends StatelessWidget {
           ),
           // Section 2 - User Info Wrapper
           Container(
-            margin: EdgeInsets.only(top: 24),
+            margin: const EdgeInsets.only(top: 24),
             width: MediaQuery.of(context).size.width,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                UserInfoTile(
+                const UserInfoTile(
                   margin: EdgeInsets.only(bottom: 16),
                   label: 'Email',
                   value: 'antonio.schmidt@example.com',
                 ),
-                UserInfoTile(
+                const UserInfoTile(
                   margin: EdgeInsets.only(bottom: 16),
                   label: 'Full Name',
                   value: 'Antonio Schmidt',
                 ),
                 UserInfoTile(
-                  margin: EdgeInsets.only(bottom: 16),
+                  margin: const EdgeInsets.only(bottom: 16),
                   label: 'Subscription Type',
                   value: 'Premium Subscription',
                   valueBackground: AppColor.secondary,
                 ),
-                UserInfoTile(
+                const UserInfoTile(
                   margin: EdgeInsets.only(bottom: 16),
                   label: 'Subscription Time',
                   value: 'Until 22 Oct 2021',

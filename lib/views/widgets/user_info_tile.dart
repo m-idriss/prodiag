@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prodiag/views/utils/AppColor.dart';
+import 'package:prodiag/views/utils/app_color.dart';
 
 class UserInfoTile extends StatelessWidget {
   final String? label, value;

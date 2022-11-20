@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:prodiag/models/core/recipe.dart';
 import 'package:prodiag/models/helper/recipe_helper.dart';
-import 'package:prodiag/views/utils/AppColor.dart';
+import 'package:prodiag/views/utils/app_color.dart';
 import 'package:prodiag/views/widgets/popular_recipe_card.dart';
 import 'package:prodiag/views/widgets/recipe_tile.dart';
 
 class DeliciousTodayPage extends StatelessWidget {
   final Recipe popularRecipe = RecipeHelper.popularRecipe;
   final List<Recipe> featuredRecipe = RecipeHelper.featuredRecipe;
+
+  DeliciousTodayPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +18,13 @@ class DeliciousTodayPage extends StatelessWidget {
         backgroundColor: AppColor.primary,
         elevation: 0,
         centerTitle: true,
-        title: Text('Delicious Today',
+        title: const Text('Delicious Today',
             style: TextStyle(
                 fontFamily: 'inter',
                 fontWeight: FontWeight.w400,
                 fontSize: 16)),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios),
+          icon: const Icon(Icons.arrow_back_ios),
           onPressed: () {
             Navigator.of(context).pop();
           },
@@ -30,26 +32,26 @@ class DeliciousTodayPage extends StatelessWidget {
       ),
       body: ListView(
         shrinkWrap: true,
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         children: [
           // Section 1 - Popular Recipe
           Container(
             color: AppColor.primary,
             alignment: Alignment.topCenter,
             height: 210,
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
             child: PopularRecipeCard(data: popularRecipe),
           ),
           // Section 2 - Bookmarked Recipe
           Container(
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
             width: MediaQuery.of(context).size.width,
             child: ListView.separated(
               shrinkWrap: true,
               itemCount: featuredRecipe.length,
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               separatorBuilder: (context, index) {
-                return SizedBox(height: 16);
+                return const SizedBox(height: 16);
               },
               itemBuilder: (context, index) {
                 return RecipeTile(

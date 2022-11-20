@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:prodiag/models/core/recipe.dart';
 import 'package:prodiag/views/screens/recipe_detail_page.dart';
-import 'package:prodiag/views/utils/AppColor.dart';
+import 'package:prodiag/views/utils/app_color.dart';
 
 class PopularRecipeCard extends StatelessWidget {
   final Recipe data;

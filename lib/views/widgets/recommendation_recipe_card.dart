@@ -13,7 +13,7 @@ class RecommendationRecipeCard extends StatelessWidget {
         Navigator.of(context).push(MaterialPageRoute(
             builder: (context) => RecipeDetailPage(data: data)));
       },
-      child: Container(
+      child: SizedBox(
         width: 180,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
