@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:prodiag/models/core/recipe.dart';
 import 'package:prodiag/views/screens/full_screen_image.dart';
-import 'package:prodiag/views/utils/AppColor.dart';
+import 'package:prodiag/views/utils/app_color.dart';
 import 'package:prodiag/views/widgets/ingridient_tile.dart';
 import 'package:prodiag/views/widgets/review_tile.dart';
 import 'package:prodiag/views/widgets/step_tile.dart';
@@ -13,7 +13,7 @@ class RecipeDetailPage extends StatefulWidget {
   const RecipeDetailPage({super.key, required this.data});
 
   @override
-  _RecipeDetailPageState createState() => _RecipeDetailPageState();
+  State<RecipeDetailPage> createState() => _RecipeDetailPageState();
 }
 
 class _RecipeDetailPageState extends State<RecipeDetailPage>
@@ -120,27 +120,25 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
                     actions: [
                       Row(
                         children: [
-                          Container(
+                          SizedBox(
                             width: 120,
                             child: TextButton(
                               onPressed: () {
                                 Navigator.of(context).pop();
                               },
-                              child: const Text('cancel'),
                               style: TextButton.styleFrom(
                                 foregroundColor: Colors.grey[600],
                               ),
+                              child: const Text('cancel'),
                             ),
                           ),
                           Expanded(
-                            child: Container(
-                              child: ElevatedButton(
-                                onPressed: () {},
-                                child: const Text('Post Review'),
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: AppColor.primary,
-                                ),
+                            child: ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: AppColor.primary,
                               ),
+                              child: const Text('Post Review'),
                             ),
                           ),
                         ],
@@ -149,8 +147,8 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
                   );
                 });
           },
-          child: const Icon(Icons.edit),
           backgroundColor: AppColor.primary,
+          child: const Icon(Icons.edit),
         ),
       ),
       body: ListView(
