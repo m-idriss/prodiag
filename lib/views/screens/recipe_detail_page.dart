@@ -5,9 +5,6 @@ import 'package:prodiag/models/core/recipe.dart';
 import 'package:prodiag/models/movies/movie_model.dart';
 import 'package:prodiag/views/screens/full_screen_image.dart';
 import 'package:prodiag/views/utils/app_color.dart';
-import 'package:prodiag/views/widgets/ingridient_tile.dart';
-import 'package:prodiag/views/widgets/review_tile.dart';
-import 'package:prodiag/views/widgets/step_tile.dart';
 
 class RecipeDetailPage extends StatefulWidget {
   final Recipe data;
@@ -244,48 +241,6 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
               ],
             ),
           ),
-          // IndexedStack based on TabBar index
-          /*
-          IndexedStack(
-            index: _tabController.index,
-            children: [
-              // Ingridients
-              ListView.builder(
-                shrinkWrap: true,
-                padding: EdgeInsets.zero,
-                itemCount: widget.data.ingridients!.length,
-                physics: const NeverScrollableScrollPhysics(),
-                itemBuilder: (context, index) {
-                  return IngridientTile(
-                    data: widget.data.ingridients![index],
-                  );
-                },
-              ),
-              // Tutorials
-              ListView.builder(
-                shrinkWrap: true,
-                padding: EdgeInsets.zero,
-                itemCount: widget.data.tutorial!.length,
-                physics: const NeverScrollableScrollPhysics(),
-                itemBuilder: (context, index) {
-                  return StepTile(
-                    data: widget.data.tutorial![index],
-                  );
-                },
-              ),
-              // Reviews
-              ListView.builder(
-                shrinkWrap: true,
-                padding: EdgeInsets.zero,
-                itemCount: widget.data.reviews!.length,
-                physics: const NeverScrollableScrollPhysics(),
-                itemBuilder: (context, index) {
-                  return ReviewTile(data: widget.data.reviews![index]);
-                },
-              )
-            ],
-          ),
-          */
         ],
       ),
     );
