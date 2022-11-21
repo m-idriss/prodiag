@@ -250,7 +250,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
 
   Row getRow(Recipe data) {
     Row row = Row(
-      children: [],
+      children: const [],
     );
     if (data is MovieModel) {
       row.children.addAll([

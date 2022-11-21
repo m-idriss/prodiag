@@ -1,5 +1,6 @@
 import 'package:prodiag/utils/logger.dart';
 import 'package:flutter/material.dart';
+import 'package:prodiag/utils/translate.dart';
 import 'package:prodiag/views/utils/app_color.dart';
 import 'package:prodiag/views/widgets/modals/login_modal.dart';
 import 'package:prodiag/views/widgets/modals/register_modal.dart';
@@ -37,8 +38,8 @@ class WelcomePage extends StatelessWidget {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    children: const [
-                      Padding(
+                    children: [
+                      const Padding(
                         padding: EdgeInsets.only(bottom: 16),
                         child: Text('prodiag',
                             style: TextStyle(
@@ -47,8 +48,8 @@ class WelcomePage extends StatelessWidget {
                                 fontSize: 32,
                                 color: Colors.white)),
                       ),
-                      Text("Help you when you're prodiag",
-                          style: TextStyle(color: Colors.white)),
+                      Text(t(context)!.helloWorld,
+                          style: const TextStyle(color: Colors.white)),
                     ],
                   ),
                   Column(
