@@ -35,7 +35,7 @@ class _MoviesPageState extends State<MoviesPage> {
               itemCount: movies.length,
               itemBuilder: (context, index) => Card(
                 child: ListTile(
-                  title: Text(movies[index].title),
+                  title: Text("movies[index].title()"),
                   leading: CircleAvatar(
                     backgroundImage: NetworkImage(movies[index].urlImage),
                   ),

@@ -7,6 +7,7 @@ import 'package:prodiag/views/utils/app_color.dart';
 
 import '../../models/movies/movie_cubit.dart';
 import '../../models/movies/movie_state.dart';
+import '../widgets/recipe_tile.dart';
 
 class BookmarksPage extends StatefulWidget {
   const BookmarksPage({super.key});
@@ -46,15 +47,21 @@ class _BookmarksPageState extends State<BookmarksPage> {
           } else if (state is LoadedState) {
             final movies = state.movies;
 
-            return ListView.builder(
-              itemCount: movies.length,
-              itemBuilder: (context, index) => Card(
-                child: ListTile(
-                  title: Text(movies[index].title),
-                  leading: CircleAvatar(
-                    backgroundImage: NetworkImage(movies[index].urlImage),
-                  ),
-                ),
+            return Container(
+              padding: const EdgeInsets.all(16),
+              width: MediaQuery.of(context).size.width,
+              child: ListView.separated(
+                shrinkWrap: true,
+                itemCount: movies.length,
+                physics: const BouncingScrollPhysics(),
+                separatorBuilder: (context, index) {
+                  return const SizedBox(height: 16);
+                },
+                itemBuilder: (context, index) {
+                  return RecipeTile(
+                    data: movies[index],
+                  );
+                },
               ),
             );
           } else {

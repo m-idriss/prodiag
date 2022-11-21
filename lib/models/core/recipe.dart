@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 class Recipe {
   String? title;
   String? photo;
@@ -27,6 +29,13 @@ class Recipe {
       time: json['time'] as String,
       description: json['description'] as String,
     );
+  }
+
+  ImageProvider<Object> extractImage() {
+    if (photo!.contains("assets")) {
+      return AssetImage(photo!);
+    }
+    return NetworkImage(photo!);
   }
 }
 

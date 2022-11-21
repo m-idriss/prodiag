@@ -15,9 +15,9 @@ class MovieRepository {
 
       final movies = List<MovieModel>.of(
         response.data['results'].map<MovieModel>(
-          (json) => MovieModel(
-            title: json['title'],
-            urlImage: 'https://image.tmdb.org/t/p/w185${json['poster_path']}',
+          (json) => MovieModel.n(
+            json['title'],
+            'https://image.tmdb.org/t/p/w185${json['poster_path']}',
           ),
         ),
       );

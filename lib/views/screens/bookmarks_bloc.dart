@@ -17,6 +17,7 @@ class _BookmarksBlocState extends State<BookmarksBloc> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: BlocProvider<MoviesCubit>(
         create: (context) => MoviesCubit(
           repository: MovieRepository(

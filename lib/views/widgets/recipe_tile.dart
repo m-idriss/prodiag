@@ -32,7 +32,7 @@ class RecipeTile extends StatelessWidget {
                 borderRadius: BorderRadius.circular(5),
                 color: Colors.blueGrey,
                 image: DecorationImage(
-                    image: AssetImage(data.photo!), fit: BoxFit.cover),
+                    image: data.extractImage(), fit: BoxFit.cover),
               ),
             ),
             // Recipe Info
@@ -65,7 +65,7 @@ class RecipeTile extends StatelessWidget {
                         Container(
                           margin: const EdgeInsets.only(left: 5),
                           child: Text(
-                            data.calories!,
+                            data.title!.length.toString(),
                             style: const TextStyle(fontSize: 12),
                           ),
                         ),
@@ -80,7 +80,7 @@ class RecipeTile extends StatelessWidget {
                         Container(
                           margin: const EdgeInsets.only(left: 5),
                           child: Text(
-                            data.time!,
+                            data.photo!.length.toString(),
                             style: const TextStyle(fontSize: 12),
                           ),
                         ),
