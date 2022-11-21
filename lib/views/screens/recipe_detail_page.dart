@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:prodiag/models/core/recipe.dart';
+import 'package:prodiag/models/movies/movie_model.dart';
 import 'package:prodiag/views/screens/full_screen_image.dart';
 import 'package:prodiag/views/utils/app_color.dart';
 import 'package:prodiag/views/widgets/ingridient_tile.dart';
@@ -165,7 +166,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
                       FullScreenImage(image: widget.data.extractImage())));
             },
             child: Container(
-              height: 280,
+              height: widget.data is MovieModel ? 380 : 280,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                   image: DecorationImage(
@@ -189,34 +190,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 // Recipe Calories and Time
-                Row(
-                  children: [
-                    SvgPicture.asset(
-                      'assets/icons/fire-filled.svg',
-                      color: Colors.white,
-                      width: 16,
-                      height: 16,
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(left: 5),
-                      child: Text(
-                        widget.data.calories!,
-                        style:
-                            const TextStyle(color: Colors.white, fontSize: 12),
-                      ),
-                    ),
-                    const SizedBox(width: 10),
-                    const Icon(Icons.alarm, size: 16, color: Colors.white),
-                    Container(
-                      margin: const EdgeInsets.only(left: 5),
-                      child: Text(
-                        widget.data.time!,
-                        style:
-                            const TextStyle(color: Colors.white, fontSize: 12),
-                      ),
-                    ),
-                  ],
-                ),
+                getRow(widget.data),
                 // Recipe Title
                 Container(
                   margin: const EdgeInsets.only(bottom: 12, top: 16),
@@ -315,5 +289,51 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
         ],
       ),
     );
+  }
+
+  rowMovies() {}
+
+  Row getRow(Recipe data) {
+    Row row = Row(
+      children: [],
+    );
+    if (data is MovieModel) {
+      row.children.addAll([
+        const Icon(Icons.numbers, size: 16, color: Colors.white),
+        Container(
+          margin: const EdgeInsets.only(left: 5),
+          child: Text(
+            data.id!,
+            style: const TextStyle(color: Colors.white, fontSize: 12),
+          ),
+        ),
+        const SizedBox(width: 10),
+      ]);
+    }
+    row.children.addAll([
+      SvgPicture.asset(
+        'assets/icons/fire-filled.svg',
+        color: Colors.white,
+        width: 16,
+        height: 16,
+      ),
+      Container(
+        margin: const EdgeInsets.only(left: 5),
+        child: Text(
+          data.calories!,
+          style: const TextStyle(color: Colors.white, fontSize: 12),
+        ),
+      ),
+      const SizedBox(width: 10),
+      const Icon(Icons.alarm, size: 16, color: Colors.white),
+      Container(
+        margin: const EdgeInsets.only(left: 5),
+        child: Text(
+          data.time!,
+          style: const TextStyle(color: Colors.white, fontSize: 12),
+        ),
+      ),
+    ]);
+    return row;
   }
 }

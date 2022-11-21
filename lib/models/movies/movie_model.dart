@@ -2,6 +2,7 @@ import '../core/recipe.dart';
 
 class MovieModel extends Recipe {
   MovieModel(
+      this.id,
       String title,
       String photo,
       String calories,
@@ -21,15 +22,14 @@ class MovieModel extends Recipe {
             tutorial: tutorial,
             reviews: reviews);
 
-  MovieModel.from(String title, this.urlImage, String calories, String time,
-      String description)
+  MovieModel.from(this.id, String title, this.urlImage, String calories,
+      String time, String description)
       : super(
-          title: title,
-          photo: urlImage,
-          calories: calories,
-          time: time,
-          description: description,
-        );
-
+            title: title,
+            photo: urlImage,
+            calories: calories,
+            time: time,
+            description: description);
+  final String id;
   final String urlImage;
 }

@@ -16,6 +16,7 @@ class MovieRepository {
       final movies = List<MovieModel>.of(
         response.data['results'].map<MovieModel>(
           (json) => MovieModel.from(
+            json['id'].toString(),
             json['title'],
             'https://image.tmdb.org/t/p/w185${json['poster_path']}',
             json['vote_count'].toString(),
