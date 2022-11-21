@@ -166,7 +166,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
                       FullScreenImage(image: widget.data.extractImage())));
             },
             child: Container(
-              height: widget.data is MovieModel ? 380 : 280,
+              height: widget.data is MovieModel ? 330 : 280,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                   image: DecorationImage(
@@ -303,7 +303,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
         Container(
           margin: const EdgeInsets.only(left: 5),
           child: Text(
-            data.id!,
+            data.id,
             style: const TextStyle(color: Colors.white, fontSize: 12),
           ),
         ),
