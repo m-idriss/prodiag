@@ -200,7 +200,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
                     Container(
                       margin: const EdgeInsets.only(left: 5),
                       child: Text(
-                        'widget.data.calories!',
+                        widget.data.calories!,
                         style:
                             const TextStyle(color: Colors.white, fontSize: 12),
                       ),
@@ -210,7 +210,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
                     Container(
                       margin: const EdgeInsets.only(left: 5),
                       child: Text(
-                        'widget.data.time!',
+                        widget.data.time!,
                         style:
                             const TextStyle(color: Colors.white, fontSize: 12),
                       ),
@@ -231,7 +231,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
                 ),
                 // Recipe Description
                 Text(
-                  'widget.data.description!',
+                  widget.data.description!,
                   style: TextStyle(
                       color: Colors.white.withOpacity(0.9),
                       fontSize: 14,

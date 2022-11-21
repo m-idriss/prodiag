@@ -65,7 +65,7 @@ class RecipeTile extends StatelessWidget {
                         Container(
                           margin: const EdgeInsets.only(left: 5),
                           child: Text(
-                            data.title!.length.toString(),
+                            data.calories!,
                             style: const TextStyle(fontSize: 12),
                           ),
                         ),
@@ -80,7 +80,7 @@ class RecipeTile extends StatelessWidget {
                         Container(
                           margin: const EdgeInsets.only(left: 5),
                           child: Text(
-                            data.photo!.length.toString(),
+                            data.time!,
                             style: const TextStyle(fontSize: 12),
                           ),
                         ),
