@@ -31,11 +31,18 @@ class Recipe {
     );
   }
 
-  ImageProvider<Object> extractImage() {
+  ImageProvider<Object> extractImageProvider() {
     if (photo!.contains("assets")) {
       return AssetImage(photo!);
     }
     return NetworkImage(photo!);
+  }
+
+  Image extractImage() {
+    if (photo!.contains("assets")) {
+      return Image.asset(photo!, fit: BoxFit.cover);
+    }
+    return Image.network(photo!, fit: BoxFit.cover);
   }
 }
 

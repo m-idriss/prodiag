@@ -161,16 +161,15 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
           GestureDetector(
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => FullScreenImage(
-                      image:
-                          Image.asset(widget.data.photo!, fit: BoxFit.cover))));
+                  builder: (context) =>
+                      FullScreenImage(image: widget.data.extractImage())));
             },
             child: Container(
               height: 280,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage(widget.data.photo!),
+                      image: widget.data.extractImageProvider(),
                       fit: BoxFit.cover)),
               child: Container(
                 decoration: BoxDecoration(gradient: AppColor.linearBlackTop),
