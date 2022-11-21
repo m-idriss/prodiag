@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:prodiag/models/core/recipe.dart';
 import 'package:prodiag/models/helper/recipe_helper.dart';
+import 'package:prodiag/utils/translate.dart';
 import 'package:prodiag/views/utils/app_color.dart';
 import 'package:prodiag/views/widgets/popular_recipe_card.dart';
 import 'package:prodiag/views/widgets/recipe_tile.dart';
@@ -18,8 +19,8 @@ class DeliciousTodayPage extends StatelessWidget {
         backgroundColor: AppColor.primary,
         elevation: 0,
         centerTitle: true,
-        title: const Text('Delicious Today',
-            style: TextStyle(
+        title: Text(t(context)!.delicious_today,
+            style: const TextStyle(
                 fontFamily: 'inter',
                 fontWeight: FontWeight.w400,
                 fontSize: 16)),

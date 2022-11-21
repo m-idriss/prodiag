@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:prodiag/models/core/recipe.dart';
 import 'package:prodiag/models/helper/recipe_helper.dart';
+import 'package:prodiag/utils/translate.dart';
 import 'package:prodiag/views/screens/search_page.dart';
 import 'package:prodiag/views/utils/app_color.dart';
 import 'package:prodiag/views/widgets/category_card.dart';
@@ -23,8 +24,8 @@ class ExplorePage extends StatelessWidget {
         backgroundColor: AppColor.primary,
         elevation: 0,
         centerTitle: false,
-        title: const Text('Explore Recipe',
-            style: TextStyle(
+        title: Text(t(context)!.explore_recipe,
+            style: const TextStyle(
                 fontFamily: 'inter',
                 fontWeight: FontWeight.w400,
                 fontSize: 16)),
@@ -90,9 +91,9 @@ class ExplorePage extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.only(bottom: 16),
                 padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: const Text(
-                  'Todays sweet food to make your day happy ......',
-                  style: TextStyle(color: Colors.grey),
+                child: Text(
+                  t(context)!.today_sweet,
+                  style: const TextStyle(color: Colors.grey),
                 ),
               ),
               // Content

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:prodiag/models/core/recipe.dart';
 import 'package:prodiag/models/helper/recipe_helper.dart';
+import 'package:prodiag/utils/translate.dart';
 import 'package:prodiag/views/screens/delicious_today_page.dart';
 import 'package:prodiag/views/screens/newly_posted_page.dart';
 import 'package:prodiag/views/screens/profile_page.dart';
@@ -22,8 +23,9 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        title: const Text('prodiag',
-            style: TextStyle(fontFamily: 'inter', fontWeight: FontWeight.w700)),
+        title: Text(t(context)!.app_title,
+            style: const TextStyle(
+                fontFamily: 'inter', fontWeight: FontWeight.w700)),
         showProfilePhoto: true,
         profilePhoto: const AssetImage('assets/images/profile.jpg'),
         profilePhotoOnPressed: () {

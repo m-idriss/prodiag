@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:prodiag/models/core/recipe.dart';
 import 'package:prodiag/models/helper/recipe_helper.dart';
+import 'package:prodiag/utils/translate.dart';
 import 'package:prodiag/views/utils/app_color.dart';
 import 'package:prodiag/views/widgets/recipe_tile.dart';
 
@@ -17,8 +18,8 @@ class NewlyPostedPage extends StatelessWidget {
         backgroundColor: AppColor.primary,
         centerTitle: true,
         elevation: 0,
-        title: const Text('Newly Posted',
-            style: TextStyle(
+        title: Text(t(context)!.newly_posted,
+            style: const TextStyle(
                 fontFamily: 'inter',
                 fontWeight: FontWeight.w400,
                 fontSize: 16)),

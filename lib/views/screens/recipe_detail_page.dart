@@ -250,8 +250,10 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
 
   Row getRow(Recipe data) {
     Row row = Row(
-      children: const [],
+      // ignore: prefer_const_literals_to_create_immutables
+      children: [],
     );
+
     if (data is MovieModel) {
       row.children.addAll([
         const Icon(Icons.numbers, size: 16, color: Colors.white),

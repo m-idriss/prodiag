@@ -39,16 +39,16 @@ class WelcomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      const Padding(
-                        padding: EdgeInsets.only(bottom: 16),
-                        child: Text('prodiag',
-                            style: TextStyle(
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 16),
+                        child: Text(t(context)!.app_title,
+                            style: const TextStyle(
                                 fontFamily: 'inter',
                                 fontWeight: FontWeight.w700,
                                 fontSize: 32,
                                 color: Colors.white)),
                       ),
-                      Text(t(context)!.helloWorld,
+                      Text(t(context)!.welcome,
                           style: const TextStyle(color: Colors.white)),
                     ],
                   ),
@@ -80,7 +80,7 @@ class WelcomePage extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10)),
                             backgroundColor: AppColor.primarySoft,
                           ),
-                          child: Text('Get Started',
+                          child: Text(t(context)!.get_started,
                               style: TextStyle(
                                   color: AppColor.secondary,
                                   fontSize: 16,
@@ -116,7 +116,7 @@ class WelcomePage extends StatelessWidget {
                                 color: AppColor.secondary.withOpacity(0.5),
                                 width: 1),
                           ),
-                          child: Text('Log in',
+                          child: Text(t(context)!.logIn,
                               style: TextStyle(
                                   color: AppColor.secondary,
                                   fontSize: 16,
@@ -130,13 +130,13 @@ class WelcomePage extends StatelessWidget {
                         child: RichText(
                           textAlign: TextAlign.center,
                           text: TextSpan(
-                            text: 'By joining prodiag, you agree to our ',
+                            text: t(context)!.by_join_agree,
                             style: TextStyle(
                                 color: Colors.white.withOpacity(0.6),
                                 height: 150 / 100),
                             children: [
                               TextSpan(
-                                text: 'Terms of service ',
+                                text: t(context)!.terms_of_service,
                                 style: TextStyle(
                                     color: Colors.white.withOpacity(0.6),
                                     fontWeight: FontWeight.w700,
@@ -149,7 +149,7 @@ class WelcomePage extends StatelessWidget {
                                     height: 150 / 100),
                               ),
                               TextSpan(
-                                text: 'Privacy policy.',
+                                text: t(context)!.privacy_policy,
                                 style: TextStyle(
                                     color: Colors.white.withOpacity(0.6),
                                     fontWeight: FontWeight.w700,

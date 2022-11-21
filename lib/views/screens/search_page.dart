@@ -1,3 +1,4 @@
+import 'package:prodiag/utils/translate.dart';
 import 'package:prodiag/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -27,8 +28,8 @@ class _SearchPageState extends State<SearchPage> {
         backgroundColor: AppColor.primary,
         elevation: 0,
         centerTitle: true,
-        title: const Text('Search Recipe',
-            style: TextStyle(
+        title: Text(t(context)!.search_recipe,
+            style: const TextStyle(
                 fontFamily: 'inter',
                 fontWeight: FontWeight.w400,
                 fontSize: 16)),
@@ -82,7 +83,7 @@ class _SearchPageState extends State<SearchPage> {
                             maxLines: 1,
                             textInputAction: TextInputAction.search,
                             decoration: InputDecoration(
-                              hintText: 'What do you want to eat?',
+                              hintText: t(context)!.want_todo,
                               hintStyle: TextStyle(
                                   color: Colors.white.withOpacity(0.2)),
                               prefixIconConstraints:
@@ -188,9 +189,9 @@ class _SearchPageState extends State<SearchPage> {
               children: [
                 Container(
                   margin: const EdgeInsets.only(bottom: 15),
-                  child: const Text(
-                    'This is the result of your search..',
-                    style: TextStyle(color: Colors.grey, fontSize: 12),
+                  child: Text(
+                    t(context)!.search_result,
+                    style: const TextStyle(color: Colors.grey, fontSize: 12),
                   ),
                 ),
                 ListView.separated(

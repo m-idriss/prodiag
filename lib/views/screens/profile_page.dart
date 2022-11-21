@@ -1,3 +1,4 @@
+import 'package:prodiag/utils/translate.dart';
 import 'package:prodiag/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -15,8 +16,8 @@ class ProfilePage extends StatelessWidget {
         backgroundColor: AppColor.primary,
         elevation: 0,
         centerTitle: true,
-        title: const Text('My Profile',
-            style: TextStyle(
+        title: Text(t(context)!.my_profile,
+            style: const TextStyle(
                 fontFamily: 'inter',
                 fontWeight: FontWeight.w400,
                 fontSize: 16)),
@@ -76,8 +77,8 @@ class ProfilePage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text('Change Profile Picture',
-                          style: TextStyle(
+                      Text(t(context)!.profile_change_picture,
+                          style: const TextStyle(
                               fontFamily: 'inter',
                               fontWeight: FontWeight.w600,
                               color: Colors.white)),
@@ -103,21 +104,21 @@ class ProfilePage extends StatelessWidget {
                   label: 'Email',
                   value: 'antonio.schmidt@example.com',
                 ),
-                const UserInfoTile(
-                  margin: EdgeInsets.only(bottom: 16),
-                  label: 'Full Name',
+                UserInfoTile(
+                  margin: const EdgeInsets.only(bottom: 16),
+                  label: t(context)!.fullname,
                   value: 'Antonio Schmidt',
                 ),
                 UserInfoTile(
                   margin: const EdgeInsets.only(bottom: 16),
-                  label: 'Subscription Type',
+                  label: t(context)!.subscription_type,
                   value: 'Premium Subscription',
                   valueBackground: AppColor.secondary,
                 ),
-                const UserInfoTile(
-                  margin: EdgeInsets.only(bottom: 16),
-                  label: 'Subscription Time',
-                  value: 'Until 22 Oct 2021',
+                UserInfoTile(
+                  margin: const EdgeInsets.only(bottom: 16),
+                  label: t(context)!.subscription_time,
+                  value: '${t(context)!.until} 22 Oct 2021',
                 ),
               ],
             ),
