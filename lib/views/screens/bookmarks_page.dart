@@ -7,6 +7,7 @@ import 'package:prodiag/views/utils/app_color.dart';
 
 import '../../models/movies/movie_cubit.dart';
 import '../../models/movies/movie_state.dart';
+import '../../utils/logger.dart';
 import '../widgets/recipe_tile.dart';
 
 class BookmarksPage extends StatefulWidget {
@@ -22,6 +23,7 @@ class _BookmarksPageState extends State<BookmarksPage> {
 
   @override
   Widget build(BuildContext context) {
+    info("$runtimeType : ${searchInputController.text.isEmpty}");
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColor.primary,
