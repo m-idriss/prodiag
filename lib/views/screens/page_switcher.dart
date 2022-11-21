@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:prodiag/views/screens/bookmarks_page.dart';
 import 'package:prodiag/views/screens/explore_page.dart';
 import 'package:prodiag/views/screens/home_page.dart';
 import 'package:prodiag/views/utils/app_color.dart';
 import 'package:prodiag/views/widgets/custom_bottom_navigation_bar.dart';
+
+import 'bookmarks_bloc.dart';
 
 class PageSwitcher extends StatefulWidget {
   const PageSwitcher({super.key});
@@ -30,7 +31,7 @@ class _PageSwitcherState extends State<PageSwitcher> {
           [
             HomePage(),
             ExplorePage(),
-            const BookmarksPage(),
+            const BookmarksBloc(),
           ][_selectedIndex],
           const BottomGradientWidget(),
         ],
