@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:prodiag/views/utils/app_color.dart';
 
 class DummySearchBar extends StatelessWidget {
   final Function() routeTo;
@@ -48,7 +47,7 @@ class DummySearchBar extends StatelessWidget {
               alignment: Alignment.center,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: AppColor.secondary,
+                color: Theme.of(context).colorScheme.secondary,
               ),
               child: SvgPicture.asset('assets/icons/filter.svg'),
             )

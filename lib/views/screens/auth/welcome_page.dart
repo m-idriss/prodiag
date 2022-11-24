@@ -84,7 +84,8 @@ class WelcomePage extends StatelessWidget {
                           ),
                           child: Text(t(context)!.get_started,
                               style: TextStyle(
-                                  color: AppColor.secondary,
+                                  color:
+                                      Theme.of(context).colorScheme.secondary,
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600,
                                   fontFamily: 'inter')),
@@ -115,12 +116,16 @@ class WelcomePage extends StatelessWidget {
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10)),
                             side: BorderSide(
-                                color: AppColor.secondary.withOpacity(0.5),
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .secondary
+                                    .withOpacity(0.5),
                                 width: 1),
                           ),
                           child: Text(t(context)!.logIn,
                               style: TextStyle(
-                                  color: AppColor.secondary,
+                                  color:
+                                      Theme.of(context).colorScheme.secondary,
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600,
                                   fontFamily: 'inter')),

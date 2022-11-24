@@ -206,7 +206,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
           Container(
             height: 60,
             width: MediaQuery.of(context).size.width,
-            color: AppColor.secondary,
+            color: Theme.of(context).colorScheme.secondary,
             child: TabBar(
               controller: _tabController,
               onTap: (index) {

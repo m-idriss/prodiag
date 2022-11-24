@@ -3,7 +3,6 @@ import 'package:prodiag/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:prodiag/views/utils/app_color.dart';
 import 'package:prodiag/views/widgets/user_info_tile.dart';
 
 class ProfilePage extends StatelessWidget {

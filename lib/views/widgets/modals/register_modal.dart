@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:prodiag/views/screens/page_switcher.dart';
-import 'package:prodiag/views/utils/app_color.dart';
 import 'package:prodiag/views/widgets/custom_text_field.dart';
 import 'package:prodiag/views/widgets/modals/login_modal.dart';
 
@@ -84,7 +83,7 @@ class RegisterModal extends StatelessWidget {
                   ),
                   child: Text('Register',
                       style: TextStyle(
-                          color: AppColor.secondary,
+                          color: Theme.of(context).colorScheme.secondary,
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
                           fontFamily: 'inter')),
