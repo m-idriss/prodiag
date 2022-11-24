@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
 class AppColor {
-  static Color primarySoft = const Color(0xFF0B5551);
-  static Color primaryExtraSoft = const Color(0xFFEEF4F4);
-  static Color secondary = const Color(0xFFEDE5CC);
   static Color whiteSoft = const Color(0xFFF8F8F8);
   static LinearGradient bottomShadow = LinearGradient(colors: [
     const Color(0xFF107873).withOpacity(0.2),
