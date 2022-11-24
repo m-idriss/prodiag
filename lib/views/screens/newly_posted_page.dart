@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:prodiag/models/core/recipe.dart';
 import 'package:prodiag/models/helper/recipe_helper.dart';
 import 'package:prodiag/utils/translate.dart';
-import 'package:prodiag/views/utils/app_color.dart';
 import 'package:prodiag/views/widgets/recipe_tile.dart';
 
 class NewlyPostedPage extends StatelessWidget {
@@ -15,7 +14,6 @@ class NewlyPostedPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColor.primary,
         centerTitle: true,
         elevation: 0,
         title: Text(t(context)!.newly_posted,

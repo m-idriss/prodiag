@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class AppColor {
-  static Color primary = const Color(0xFF094542);
   static Color primarySoft = const Color(0xFF0B5551);
   static Color primaryExtraSoft = const Color(0xFFEEF4F4);
   static Color secondary = const Color(0xFFEDE5CC);
@@ -18,8 +17,4 @@ class AppColor {
       colors: [Colors.black.withOpacity(0.5), Colors.transparent],
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter);
-  static RadialGradient bottomGradient = RadialGradient(colors: [
-    const Color.fromARGB(255, 255, 255, 255).withOpacity(0),
-    primary.withOpacity(0.5),
-  ]);
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:prodiag/views/utils/app_color.dart';
 
 class SearchFilterModal extends StatelessWidget {
   const SearchFilterModal({super.key});
@@ -15,7 +14,7 @@ class SearchFilterModal extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(20), topRight: Radius.circular(20)),
-            color: AppColor.primaryExtraSoft,
+            color: Theme.of(context).selectedRowColor,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -62,7 +61,7 @@ class SearchFilterModal extends StatelessWidget {
               border: Border(
                   bottom: BorderSide(color: Colors.grey[300]!.withOpacity(1)))),
           child: ListTileTheme(
-            selectedColor: AppColor.primary,
+            selectedColor: Theme.of(context).primaryColor,
             textColor: Colors.grey,
             child: const ListTile(
               selected: true,
@@ -78,7 +77,7 @@ class SearchFilterModal extends StatelessWidget {
               border: Border(
                   bottom: BorderSide(color: Colors.grey[300]!.withOpacity(1)))),
           child: ListTileTheme(
-            selectedColor: AppColor.primary,
+            selectedColor: Theme.of(context).primaryColor,
             textColor: Colors.grey,
             child: const ListTile(
               selected: false,
@@ -94,7 +93,7 @@ class SearchFilterModal extends StatelessWidget {
               border: Border(
                   bottom: BorderSide(color: Colors.grey[300]!.withOpacity(1)))),
           child: ListTileTheme(
-            selectedColor: AppColor.primary,
+            selectedColor: Theme.of(context).primaryColor,
             textColor: Colors.grey,
             child: const ListTile(
               selected: false,

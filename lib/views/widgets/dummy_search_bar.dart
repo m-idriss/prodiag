@@ -25,7 +25,7 @@ class DummySearchBar extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: AppColor.primarySoft),
+                    color: Theme.of(context).primaryColorLight),
                 child: Row(
                   children: [
                     SvgPicture.asset('assets/icons/search.svg',

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:prodiag/views/utils/app_color.dart';
 
 class CustomTextField extends StatelessWidget {
   final String? title;
@@ -40,12 +39,12 @@ class CustomTextField extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             height: 50,
             decoration: BoxDecoration(
-                color: AppColor.primaryExtraSoft,
+                color: Theme.of(context).selectedRowColor,
                 borderRadius: BorderRadius.circular(10)),
             child: TextField(
               controller: controller,
               style: const TextStyle(fontSize: 14),
-              cursorColor: AppColor.primary,
+              cursorColor: Theme.of(context).primaryColor,
               obscureText: obsecureText,
               decoration: InputDecoration(
                 hintText: '$hint',

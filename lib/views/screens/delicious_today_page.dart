@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:prodiag/models/core/recipe.dart';
 import 'package:prodiag/models/helper/recipe_helper.dart';
 import 'package:prodiag/utils/translate.dart';
-import 'package:prodiag/views/utils/app_color.dart';
 import 'package:prodiag/views/widgets/popular_recipe_card.dart';
 import 'package:prodiag/views/widgets/recipe_tile.dart';
 
@@ -16,7 +15,6 @@ class DeliciousTodayPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColor.primary,
         elevation: 0,
         centerTitle: true,
         title: Text(t(context)!.delicious_today,
@@ -37,7 +35,7 @@ class DeliciousTodayPage extends StatelessWidget {
         children: [
           // Section 1 - Popular Recipe
           Container(
-            color: AppColor.primary,
+            color: Theme.of(context).primaryColor,
             alignment: Alignment.topCenter,
             height: 210,
             padding: const EdgeInsets.all(16),

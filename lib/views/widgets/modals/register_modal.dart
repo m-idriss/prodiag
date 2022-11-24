@@ -80,7 +80,7 @@ class RegisterModal extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)),
-                    backgroundColor: AppColor.primarySoft,
+                    backgroundColor: Theme.of(context).primaryColorLight,
                   ),
                   child: Text('Register',
                       style: TextStyle(
@@ -117,7 +117,7 @@ class RegisterModal extends StatelessWidget {
                     children: [
                       TextSpan(
                           style: TextStyle(
-                            color: AppColor.primary,
+                            color: Theme.of(context).primaryColor,
                             fontWeight: FontWeight.w700,
                             fontFamily: 'inter',
                           ),

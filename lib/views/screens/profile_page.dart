@@ -13,7 +13,6 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColor.primary,
         elevation: 0,
         centerTitle: true,
         title: Text(t(context)!.my_profile,
@@ -51,7 +50,7 @@ class ProfilePage extends StatelessWidget {
         children: [
           // Section 1 - Profile Picture Wrapper
           Container(
-            color: AppColor.primary,
+            color: Theme.of(context).primaryColor,
             padding: const EdgeInsets.symmetric(vertical: 24),
             child: GestureDetector(
               onTap: () {

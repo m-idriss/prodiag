@@ -5,6 +5,7 @@ import 'package:prodiag/models/core/recipe.dart';
 import 'package:prodiag/models/movies/movie_model.dart';
 import 'package:prodiag/views/screens/full_screen_image.dart';
 import 'package:prodiag/views/utils/app_color.dart';
+import 'package:prodiag/utils/translate.dart';
 
 class RecipeDetailPage extends StatefulWidget {
   final Recipe data;
@@ -35,7 +36,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
     if (scrollController.position.hasPixels) {
       if (scrollController.position.pixels > 2.0) {
         setState(() {
-          appBarColor = AppColor.primary;
+          appBarColor = Theme.of(context).primaryColor;
         });
       }
       if (scrollController.position.pixels <= 2.0) {
@@ -72,11 +73,8 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
             backgroundColor: Colors.transparent,
             elevation: 0,
             centerTitle: true,
-            title: const Text('Search Recipe',
-                style: TextStyle(
-                    fontFamily: 'inter',
-                    fontWeight: FontWeight.w400,
-                    fontSize: 16)),
+            title: Text(t(context)!.search_recipe,
+                style: Theme.of(context).primaryTextTheme.titleLarge),
             leading: IconButton(
               icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
               onPressed: () {
@@ -106,11 +104,11 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
                       width: MediaQuery.of(context).size.width,
                       height: 150,
                       color: Colors.white,
-                      child: const TextField(
+                      child: TextField(
                         keyboardType: TextInputType.multiline,
                         minLines: 6,
                         decoration: InputDecoration(
-                          hintText: 'Write your review here...',
+                          hintText: t(context)!.write_review_here,
                         ),
                         maxLines: null,
                       ),
@@ -127,16 +125,16 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
                               style: TextButton.styleFrom(
                                 foregroundColor: Colors.grey[600],
                               ),
-                              child: const Text('cancel'),
+                              child: Text(t(context)!.cancel),
                             ),
                           ),
                           Expanded(
                             child: ElevatedButton(
                               onPressed: () {},
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: AppColor.primary,
+                                backgroundColor: Theme.of(context).primaryColor,
                               ),
-                              child: const Text('Post Review'),
+                              child: Text(t(context)!.post_review),
                             ),
                           ),
                         ],
@@ -145,7 +143,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
                   );
                 });
           },
-          backgroundColor: AppColor.primary,
+          backgroundColor: Theme.of(context).primaryColor,
           child: const Icon(Icons.edit),
         ),
       ),
@@ -181,7 +179,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
             width: MediaQuery.of(context).size.width,
             padding:
                 const EdgeInsets.only(top: 20, bottom: 30, left: 16, right: 16),
-            color: AppColor.primary,
+            color: Theme.of(context).primaryColor,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -228,15 +226,15 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
               labelStyle: const TextStyle(
                   fontFamily: 'inter', fontWeight: FontWeight.w500),
               indicatorColor: Colors.black,
-              tabs: const [
+              tabs: [
                 Tab(
-                  text: 'Ingridients',
+                  text: t(context)!.ingridients,
                 ),
                 Tab(
-                  text: 'Tutorial',
+                  text: t(context)!.tutorial,
                 ),
                 Tab(
-                  text: 'Reviews',
+                  text: t(context)!.reviews,
                 ),
               ],
             ),

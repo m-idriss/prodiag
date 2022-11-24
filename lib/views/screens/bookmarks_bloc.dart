@@ -16,16 +16,13 @@ class BookmarksBloc extends StatefulWidget {
 class _BookmarksBlocState extends State<BookmarksBloc> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: BlocProvider<MoviesCubit>(
-        create: (context) => MoviesCubit(
-          repository: MovieRepository(
-            Dio(),
-          ),
+    return BlocProvider<MoviesCubit>(
+      create: (context) => MoviesCubit(
+        repository: MovieRepository(
+          Dio(),
         ),
-        child: const BookmarksPage(),
       ),
+      child: const BookmarksPage(),
     );
   }
 }

@@ -5,7 +5,6 @@ import 'package:prodiag/models/core/recipe.dart';
 import 'package:prodiag/models/helper/recipe_helper.dart';
 import 'package:prodiag/utils/translate.dart';
 import 'package:prodiag/views/screens/search_page.dart';
-import 'package:prodiag/views/utils/app_color.dart';
 import 'package:prodiag/views/widgets/category_card.dart';
 import 'package:prodiag/views/widgets/popular_recipe_card.dart';
 import 'package:prodiag/views/widgets/recommendation_recipe_card.dart';
@@ -21,14 +20,10 @@ class ExplorePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColor.primary,
         elevation: 0,
         centerTitle: false,
         title: Text(t(context)!.explore_recipe,
-            style: const TextStyle(
-                fontFamily: 'inter',
-                fontWeight: FontWeight.w400,
-                fontSize: 16)),
+            style: Theme.of(context).primaryTextTheme.titleMedium),
         automaticallyImplyLeading: false,
         actions: [
           IconButton(
@@ -51,7 +46,7 @@ class ExplorePage extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             width: MediaQuery.of(context).size.width,
             height: 245,
-            color: AppColor.primary,
+            color: Theme.of(context).primaryColor,
             child: Wrap(
               spacing: 16,
               runSpacing: 16,

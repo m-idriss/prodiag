@@ -1,24 +1,36 @@
+import 'dart:convert';
+
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:json_theme/json_theme.dart';
 import 'package:prodiag/utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:prodiag/views/screens/auth/welcome_page.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-void main() {
+Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     systemNavigationBarColor: Colors.black,
     systemNavigationBarIconBrightness: Brightness.light,
   ));
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+
+  final themeStr = await rootBundle
+      .loadString('assets/themes/appainter_theme_green-dark.json');
+  final themeJson = jsonDecode(themeStr);
+  final theme = ThemeDecoder.decodeThemeData(themeJson)!;
+  runApp(MyApp(theme: theme));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final ThemeData theme;
+
+  const MyApp({Key? key, required this.theme}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     info("main - start apply");
+
     return MaterialApp(
       localizationsDelegates: const [
         AppLocalizations.delegate,
@@ -31,10 +43,7 @@ class MyApp extends StatelessWidget {
         Locale('fr', ''),
       ],
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: 'Open Sans',
-        scaffoldBackgroundColor: Colors.white,
-      ),
+      theme: theme,
       home: const WelcomePage(),
     );
   }

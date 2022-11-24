@@ -25,7 +25,6 @@ class _SearchPageState extends State<SearchPage> {
     info("$runtimeType : ${searchInputController.text.isEmpty}");
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColor.primary,
         elevation: 0,
         centerTitle: true,
         title: Text(t(context)!.search_recipe,
@@ -49,7 +48,7 @@ class _SearchPageState extends State<SearchPage> {
           Container(
             width: MediaQuery.of(context).size.width,
             height: 145,
-            color: AppColor.primary,
+            color: Theme.of(context).primaryColor,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -68,7 +67,7 @@ class _SearchPageState extends State<SearchPage> {
                           margin: const EdgeInsets.only(right: 15),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
-                              color: AppColor.primarySoft),
+                              color: Theme.of(context).primaryColorLight),
                           child: TextField(
                             controller: searchInputController,
                             onChanged: (value) {

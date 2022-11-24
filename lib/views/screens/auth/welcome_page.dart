@@ -23,7 +23,11 @@ class WelcomePage extends StatelessWidget {
                       image: AssetImage('assets/images/bg.jpg'),
                       fit: BoxFit.cover)),
               child: Container(
-                decoration: BoxDecoration(gradient: AppColor.bottomGradient),
+                decoration: BoxDecoration(
+                    gradient: RadialGradient(colors: [
+                  const Color.fromARGB(255, 255, 255, 255).withOpacity(0),
+                  Theme.of(context).primaryColor.withOpacity(0.5),
+                ])),
               )),
           Positioned(
             bottom: 0,
@@ -42,11 +46,8 @@ class WelcomePage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(bottom: 16),
                         child: Text(t(context)!.app_title,
-                            style: const TextStyle(
-                                fontFamily: 'inter',
-                                fontWeight: FontWeight.w700,
-                                fontSize: 32,
-                                color: Colors.white)),
+                            style:
+                                Theme.of(context).primaryTextTheme.titleLarge),
                       ),
                       Text(t(context)!.welcome,
                           style: const TextStyle(color: Colors.white)),
@@ -78,7 +79,8 @@ class WelcomePage extends StatelessWidget {
                           style: ElevatedButton.styleFrom(
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10)),
-                            backgroundColor: AppColor.primarySoft,
+                            backgroundColor:
+                                Theme.of(context).primaryColorLight,
                           ),
                           child: Text(t(context)!.get_started,
                               style: TextStyle(

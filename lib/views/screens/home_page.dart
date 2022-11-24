@@ -6,7 +6,6 @@ import 'package:prodiag/views/screens/delicious_today_page.dart';
 import 'package:prodiag/views/screens/newly_posted_page.dart';
 import 'package:prodiag/views/screens/profile_page.dart';
 import 'package:prodiag/views/screens/search_page.dart';
-import 'package:prodiag/views/utils/app_color.dart';
 import 'package:prodiag/views/widgets/custom_app_bar.dart';
 import 'package:prodiag/views/widgets/dummy_search_bar.dart';
 import 'package:prodiag/views/widgets/featured_recipe_card.dart';
@@ -24,8 +23,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
         title: Text(t(context)!.app_title,
-            style: const TextStyle(
-                fontFamily: 'inter', fontWeight: FontWeight.w700)),
+            style: Theme.of(context).primaryTextTheme.titleLarge),
         showProfilePhoto: true,
         profilePhoto: const AssetImage('assets/images/profile.jpg'),
         profilePhotoOnPressed: () {
@@ -45,7 +43,7 @@ class HomePage extends StatelessWidget {
               children: [
                 Container(
                   height: 245,
-                  color: AppColor.primary,
+                  color: Theme.of(context).primaryColor,
                 ),
                 // Section 1 - Content
                 Column(
@@ -82,7 +80,7 @@ class HomePage extends StatelessWidget {
                                 foregroundColor: Colors.white,
                                 textStyle: const TextStyle(
                                     fontWeight: FontWeight.w400, fontSize: 14)),
-                            child: const Text('see all'),
+                            child: Text(t(context)!.see_all),
                           ),
                         ],
                       ),
@@ -160,9 +158,9 @@ class HomePage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
-                      'Newly Posted',
-                      style: TextStyle(
+                    Text(
+                      t(context)!.newly_posted,
+                      style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
                           fontFamily: 'inter'),
@@ -176,7 +174,7 @@ class HomePage extends StatelessWidget {
                           foregroundColor: Colors.black,
                           textStyle: const TextStyle(
                               fontWeight: FontWeight.w400, fontSize: 14)),
-                      child: const Text('see all'),
+                      child: Text(t(context)!.see_all),
                     ),
                   ],
                 ),

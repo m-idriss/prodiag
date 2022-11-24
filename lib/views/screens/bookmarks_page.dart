@@ -3,8 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:prodiag/models/core/recipe.dart';
 import 'package:prodiag/models/helper/recipe_helper.dart';
-import 'package:prodiag/views/utils/app_color.dart';
-
+import 'package:prodiag/utils/translate.dart';
 import '../../models/movies/movie_cubit.dart';
 import '../../models/movies/movie_state.dart';
 import '../../utils/logger.dart';
@@ -26,14 +25,10 @@ class _BookmarksPageState extends State<BookmarksPage> {
     info("$runtimeType : ${searchInputController.text.isEmpty}");
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColor.primary,
         centerTitle: false,
         elevation: 0,
-        title: const Text('Bookmarks : my bets',
-            style: TextStyle(
-                fontFamily: 'inter',
-                fontWeight: FontWeight.w400,
-                fontSize: 16)),
+        title: Text(t(context)!.bookmarks_my_bets,
+            style: Theme.of(context).primaryTextTheme.titleMedium),
         systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
       body: BlocBuilder<MoviesCubit, MoviesState>(
