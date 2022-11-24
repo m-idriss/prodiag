@@ -122,18 +122,12 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
                               onPressed: () {
                                 Navigator.of(context).pop();
                               },
-                              style: TextButton.styleFrom(
-                                foregroundColor: Colors.grey[600],
-                              ),
                               child: Text(t(context)!.cancel),
                             ),
                           ),
                           Expanded(
                             child: ElevatedButton(
                               onPressed: () {},
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Theme.of(context).primaryColor,
-                              ),
                               child: Text(t(context)!.post_review),
                             ),
                           ),
@@ -143,7 +137,6 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
                   );
                 });
           },
-          backgroundColor: Theme.of(context).primaryColor,
           child: const Icon(Icons.edit),
         ),
       ),

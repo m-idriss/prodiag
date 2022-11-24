@@ -16,10 +16,7 @@ class ProfilePage extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
         title: Text(t(context)!.my_profile,
-            style: const TextStyle(
-                fontFamily: 'inter',
-                fontWeight: FontWeight.w400,
-                fontSize: 16)),
+            style: Theme.of(context).primaryTextTheme.titleLarge),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
           onPressed: () {
@@ -33,13 +30,8 @@ class ProfilePage extends StatelessWidget {
                 foregroundColor: Colors.white,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(100))),
-            child: const Text(
-              'Edit',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600),
-            ),
+            child: Text('Edit',
+                style: Theme.of(context).primaryTextTheme.titleSmall),
           ),
         ],
         systemOverlayStyle: SystemUiOverlayStyle.light,
@@ -77,10 +69,8 @@ class ProfilePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(t(context)!.profile_change_picture,
-                          style: const TextStyle(
-                              fontFamily: 'inter',
-                              fontWeight: FontWeight.w600,
-                              color: Colors.white)),
+                          style:
+                              Theme.of(context).primaryTextTheme.titleMedium),
                       const SizedBox(width: 8),
                       SvgPicture.asset('assets/icons/camera.svg',
                           color: Colors.white),
@@ -112,7 +102,7 @@ class ProfilePage extends StatelessWidget {
                   margin: const EdgeInsets.only(bottom: 16),
                   label: t(context)!.subscription_type,
                   value: 'Premium Subscription',
-                  valueBackground: AppColor.secondary,
+                  valueBackground: Theme.of(context).colorScheme.secondary,
                 ),
                 UserInfoTile(
                   margin: const EdgeInsets.only(bottom: 16),
