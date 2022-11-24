@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prodiag/views/screens/explore_page.dart';
 import 'package:prodiag/views/screens/home_page.dart';
-import 'package:prodiag/views/utils/app_color.dart';
 import 'package:prodiag/views/widgets/custom_bottom_navigation_bar.dart';
 
 import 'bookmarks_bloc.dart';
@@ -52,7 +51,12 @@ class BottomGradientWidget extends StatelessWidget {
       child: Container(
         width: MediaQuery.of(context).size.width,
         height: 150,
-        decoration: BoxDecoration(gradient: AppColor.bottomShadow),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(colors: [
+            Theme.of(context).indicatorColor.withOpacity(0.2),
+            Theme.of(context).indicatorColor.withOpacity(0)
+          ], begin: Alignment.bottomCenter, end: Alignment.topCenter),
+        ),
       ),
     );
   }
