@@ -39,7 +39,7 @@ class DeliciousTodayPage extends StatelessWidget {
             alignment: Alignment.topCenter,
             height: 210,
             padding: const EdgeInsets.all(16),
-            child: PopularRecipeCard(data: popularRecipe),
+            child: PopularRecipeCard(data: RecipeHelper.popularRecipe),
           ),
           // Section 2 - Bookmarked Recipe
           Container(
@@ -54,7 +54,7 @@ class DeliciousTodayPage extends StatelessWidget {
               },
               itemBuilder: (context, index) {
                 return RecipeTile(
-                  data: featuredRecipe[index],
+                  data: RecipeHelper.featuredRecipe[index],
                 );
               },
             ),
