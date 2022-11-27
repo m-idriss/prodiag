@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:prodiag/views/screens/page_switcher.dart';
 import 'package:prodiag/views/widgets/custom_text_field.dart';
 import 'package:prodiag/views/widgets/modals/login_modal.dart';
+import 'package:prodiag/utils/translate.dart';
 
 class RegisterModal extends StatelessWidget {
   const RegisterModal({super.key});
@@ -39,13 +40,10 @@ class RegisterModal extends StatelessWidget {
               // header
               Container(
                 margin: const EdgeInsets.only(bottom: 24),
-                child: const Text(
-                  'Get Started',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 22,
-                      fontWeight: FontWeight.w700,
-                      fontFamily: 'inter'),
+                child: Text(
+                  t(context)!.get_started,
+                  style: Theme.of(context).typography.tall.titleLarge!.copyWith(
+                      color: Theme.of(context).colorScheme.onBackground),
                 ),
               ),
               // Form
@@ -81,12 +79,15 @@ class RegisterModal extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10)),
                     backgroundColor: Theme.of(context).primaryColorLight,
                   ),
-                  child: Text('Register',
-                      style: TextStyle(
-                          color: Theme.of(context).colorScheme.secondary,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          fontFamily: 'inter')),
+                  child: Text(
+                    'Register',
+                    style: Theme.of(context)
+                        .typography
+                        .tall
+                        .bodyLarge!
+                        .copyWith(
+                            color: Theme.of(context).colorScheme.secondary),
+                  ),
                 ),
               ),
               // Login textbutton
@@ -111,16 +112,17 @@ class RegisterModal extends StatelessWidget {
                 ),
                 child: RichText(
                   text: TextSpan(
-                    text: 'Have an account? ',
+                    text: "${t(context)!.have_account} ",
                     style: const TextStyle(color: Colors.grey),
                     children: [
                       TextSpan(
-                          style: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontWeight: FontWeight.w700,
-                            fontFamily: 'inter',
-                          ),
-                          text: 'Log in')
+                          style: Theme.of(context)
+                              .typography
+                              .tall
+                              .bodyLarge!
+                              .copyWith(
+                                  color: Theme.of(context).colorScheme.primary),
+                          text: t(context)!.logIn)
                     ],
                   ),
                 ),

@@ -37,10 +37,7 @@ class RecommendationRecipeCard extends StatelessWidget {
               padding: const EdgeInsets.only(left: 4),
               child: Text(
                 data.title!,
-                style: const TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
-                    fontFamily: 'inter'),
+                style: Theme.of(context).textTheme.bodySmall,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),

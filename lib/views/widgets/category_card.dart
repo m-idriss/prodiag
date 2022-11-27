@@ -23,14 +23,8 @@ class CategoryCard extends StatelessWidget {
         alignment: Alignment.center,
         decoration:
             BoxDecoration(color: const Color(0xFF062D2B).withOpacity(0.40)),
-        child: Text(
-          title,
-          style: const TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-              fontWeight: FontWeight.w700,
-              fontFamily: 'inter'),
-        ),
+        child:
+            Text(title, style: Theme.of(context).primaryTextTheme.titleLarge),
       ),
     );
   }

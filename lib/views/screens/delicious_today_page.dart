@@ -18,12 +18,12 @@ class DeliciousTodayPage extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
         title: Text(t(context)!.delicious_today,
-            style: const TextStyle(
-                fontFamily: 'inter',
-                fontWeight: FontWeight.w400,
-                fontSize: 16)),
+            style: Theme.of(context).primaryTextTheme.titleLarge),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios),
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.white,
+          ),
           onPressed: () {
             Navigator.of(context).pop();
           },

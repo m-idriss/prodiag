@@ -28,16 +28,14 @@ class UserInfoTile extends StatelessWidget {
                     color: Theme.of(context).primaryColor, fontSize: 12)),
           ),
           Container(
-            margin: const EdgeInsets.only(top: 6),
-            width: MediaQuery.of(context).size.width,
-            padding: const EdgeInsets.all(16),
-            color: valueBackground ?? Theme.of(context).selectedRowColor,
-            child: Text(value!,
-                style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    fontFamily: 'inter')),
-          )
+              margin: const EdgeInsets.only(top: 6),
+              width: MediaQuery.of(context).size.width,
+              padding: const EdgeInsets.all(16),
+              color: valueBackground ?? Theme.of(context).selectedRowColor,
+              child: Text(
+                value!,
+                style: Theme.of(context).textTheme.bodyLarge,
+              ))
         ],
       ),
     );

@@ -1,4 +1,7 @@
 {
+  "appBarTheme": {
+    "foregroundColor": "#fffafafb"
+  },
   "applyElevationOverlayColor": false,
   "backgroundColor": "#ff537d7b",
   "bottomAppBarColor": "#ffffffff",
@@ -114,11 +117,105 @@
   "dialogBackgroundColor": "#ffffffff",
   "disabledColor": "#61000000",
   "dividerColor": "#1f000000",
+  "elevatedButtonTheme": {
+    "style": {
+      "backgroundColor": {
+        "disabled": "#1f000000",
+        "dragged": "#ff094542",
+        "empty": "#ff094542",
+        "error": "#ff094542",
+        "focused": "#ff094542",
+        "hovered": "#ff094542",
+        "pressed": "#ff094542",
+        "scrolledUnder": "#ff094542",
+        "selected": "#ff094542"
+      },
+      "elevation": {
+        "disabled": 0,
+        "dragged": 2,
+        "empty": 2,
+        "error": 2,
+        "focused": 4,
+        "hovered": 4,
+        "pressed": 8,
+        "scrolledUnder": 2,
+        "selected": 2
+      },
+      "foregroundColor": {
+        "disabled": "#61000000",
+        "dragged": "#fffafafb",
+        "empty": "#fffafafb",
+        "error": "#fffafafb",
+        "focused": "#fffafafb",
+        "hovered": "#fffafafb",
+        "pressed": "#fffafafb",
+        "scrolledUnder": "#fffafafb",
+        "selected": "#fffafafb"
+      },
+      "minimumSize": {
+        "disabled": {
+          "height": 36,
+          "width": 64
+        },
+        "dragged": {
+          "height": 36,
+          "width": 64
+        },
+        "empty": {
+          "height": 36,
+          "width": 64
+        },
+        "error": {
+          "height": 36,
+          "width": 64
+        },
+        "focused": {
+          "height": 36,
+          "width": 64
+        },
+        "hovered": {
+          "height": 36,
+          "width": 64
+        },
+        "pressed": {
+          "height": 36,
+          "width": 64
+        },
+        "scrolledUnder": {
+          "height": 36,
+          "width": 64
+        },
+        "selected": {
+          "height": 36,
+          "width": 64
+        }
+      },
+      "overlayColor": {
+        "focused": "#3d000000",
+        "hovered": "#14000000",
+        "pressed": "#3d000000"
+      },
+      "shadowColor": {
+        "disabled": "#ff000000",
+        "dragged": "#ff000000",
+        "empty": "#ff000000",
+        "error": "#ff000000",
+        "focused": "#ff000000",
+        "hovered": "#ff000000",
+        "pressed": "#ff000000",
+        "scrolledUnder": "#ff000000",
+        "selected": "#ff000000"
+      }
+    }
+  },
   "errorColor": "#ffd32f2f",
   "focusColor": "#1f000000",
   "highlightColor": "#66bcbcbc",
   "hintColor": "#99000000",
   "hoverColor": "#0a000000",
+  "iconTheme": {
+    "color": "#dd000000"
+  },
   "indicatorColor": "#ff107873",
   "inputDecorationTheme": {
     "alignLabelWithHint": false,

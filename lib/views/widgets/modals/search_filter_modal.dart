@@ -28,16 +28,18 @@ class SearchFilterModal extends StatelessWidget {
                   color: Colors.transparent,
                   alignment: Alignment.center,
                   padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child:
-                      const Text('Reset', style: TextStyle(color: Colors.grey)),
+                  child: Text(
+                    'Reset',
+                    style: Theme.of(context)
+                        .primaryTextTheme
+                        .titleSmall!
+                        .copyWith(color: Colors.grey),
+                  ),
                 ),
               ),
-              const Text(
+              Text(
                 'Sort by',
-                style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w600,
-                    fontFamily: 'inter'),
+                style: Theme.of(context).dialogTheme.titleTextStyle,
               ),
               GestureDetector(
                 onTap: () {

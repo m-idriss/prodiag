@@ -63,14 +63,10 @@ class HomePage extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Text(
-                            'Delicious Today',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                                fontFamily: 'inter'),
-                          ),
+                          Text(t(context)!.delicious_today,
+                              style: Theme.of(context)
+                                  .primaryTextTheme
+                                  .titleMedium),
                           TextButton(
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
@@ -78,8 +74,9 @@ class HomePage extends StatelessWidget {
                             },
                             style: TextButton.styleFrom(
                                 foregroundColor: Colors.white,
-                                textStyle: const TextStyle(
-                                    fontWeight: FontWeight.w400, fontSize: 14)),
+                                textStyle: Theme.of(context)
+                                    .primaryTextTheme
+                                    .titleSmall),
                             child: Text(t(context)!.see_all),
                           ),
                         ],
@@ -121,9 +118,9 @@ class HomePage extends StatelessWidget {
                 Container(
                   margin: const EdgeInsets.only(bottom: 16),
                   padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: const Text(
-                    'Today recomendation based on your taste...',
-                    style: TextStyle(color: Colors.grey),
+                  child: Text(
+                    t(context)!.today_recommendation,
+                    style: Theme.of(context).textTheme.titleSmall,
                   ),
                 ),
                 // Content
@@ -158,22 +155,14 @@ class HomePage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      t(context)!.newly_posted,
-                      style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          fontFamily: 'inter'),
-                    ),
+                    Text(t(context)!.newly_posted,
+                        style: Theme.of(context).textTheme.headline6),
                     TextButton(
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) => NewlyPostedPage()));
                       },
-                      style: TextButton.styleFrom(
-                          foregroundColor: Colors.black,
-                          textStyle: const TextStyle(
-                              fontWeight: FontWeight.w400, fontSize: 14)),
+                      style: Theme.of(context).textButtonTheme.style,
                       child: Text(t(context)!.see_all),
                     ),
                   ],

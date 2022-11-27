@@ -33,19 +33,14 @@ class PopularRecipeCard extends StatelessWidget {
             // Popular Now Tag Card
             Container(
               margin: const EdgeInsets.only(bottom: 8),
-              width: 95,
+              width: 165,
               alignment: Alignment.center,
               padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(5),
                   color: Theme.of(context).primaryColor),
-              child: const Text(
-                'Popular Now !!',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 10,
-                    fontWeight: FontWeight.w500),
-              ),
+              child: Text('Popular Now !!',
+                  style: Theme.of(context).primaryTextTheme.titleSmall),
             ),
             // Recipe Info Wrapper
             ClipRect(
@@ -67,12 +62,7 @@ class PopularRecipeCard extends StatelessWidget {
                         data.title!,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
-                        style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            height: 150 / 100,
-                            fontWeight: FontWeight.w600,
-                            fontFamily: 'inter'),
+                        style: Theme.of(context).typography.tall.bodyLarge,
                       ),
                       // Recipe Calories and Time
                       Container(

@@ -182,14 +182,8 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
                 // Recipe Title
                 Container(
                   margin: const EdgeInsets.only(bottom: 12, top: 16),
-                  child: Text(
-                    widget.data.title!,
-                    style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: 'inter'),
-                  ),
+                  child: Text(widget.data.title!,
+                      style: Theme.of(context).primaryTextTheme.titleLarge),
                 ),
                 // Recipe Description
                 Text(
@@ -216,8 +210,7 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
               },
               labelColor: Colors.black,
               unselectedLabelColor: Colors.black.withOpacity(0.6),
-              labelStyle: const TextStyle(
-                  fontFamily: 'inter', fontWeight: FontWeight.w500),
+              labelStyle: Theme.of(context).primaryTextTheme.labelLarge,
               indicatorColor: Colors.black,
               tabs: [
                 Tab(

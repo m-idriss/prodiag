@@ -16,11 +16,9 @@ class NewlyPostedPage extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,
-        title: Text(t(context)!.newly_posted,
-            style: const TextStyle(
-                fontFamily: 'inter',
-                fontWeight: FontWeight.w400,
-                fontSize: 16)),
+        title: Text(
+          t(context)!.newly_posted,
+        ),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
           onPressed: () {

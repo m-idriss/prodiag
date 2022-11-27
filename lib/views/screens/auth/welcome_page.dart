@@ -50,7 +50,8 @@ class WelcomePage extends StatelessWidget {
                                 Theme.of(context).primaryTextTheme.titleLarge),
                       ),
                       Text(t(context)!.welcome,
-                          style: const TextStyle(color: Colors.white)),
+                          style:
+                              Theme.of(context).primaryTextTheme.titleMedium),
                     ],
                   ),
                   Column(
@@ -83,12 +84,13 @@ class WelcomePage extends StatelessWidget {
                                 Theme.of(context).primaryColorLight,
                           ),
                           child: Text(t(context)!.get_started,
-                              style: TextStyle(
-                                  color:
-                                      Theme.of(context).colorScheme.secondary,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                  fontFamily: 'inter')),
+                              style: Theme.of(context)
+                                  .primaryTextTheme
+                                  .titleLarge
+                                  ?.copyWith(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .secondary)),
                         ),
                       ),
                       const SizedBox(height: 16),
@@ -123,12 +125,13 @@ class WelcomePage extends StatelessWidget {
                                 width: 1),
                           ),
                           child: Text(t(context)!.logIn,
-                              style: TextStyle(
-                                  color:
-                                      Theme.of(context).colorScheme.secondary,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                  fontFamily: 'inter')),
+                              style: Theme.of(context)
+                                  .primaryTextTheme
+                                  .titleLarge
+                                  ?.copyWith(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .secondary)),
                         ),
                       ),
                       Container(

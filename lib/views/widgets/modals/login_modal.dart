@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prodiag/utils/translate.dart';
 import 'package:prodiag/views/screens/page_switcher.dart';
 import 'package:prodiag/views/widgets/custom_text_field.dart';
 
@@ -38,23 +39,20 @@ class LoginModal extends StatelessWidget {
               // header
               Container(
                 margin: const EdgeInsets.only(bottom: 24),
-                child: const Text(
-                  'Login',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 22,
-                      fontWeight: FontWeight.w700,
-                      fontFamily: 'inter'),
+                child: Text(
+                  t(context)!.logIn,
+                  style: Theme.of(context).typography.tall.titleLarge!.copyWith(
+                      color: Theme.of(context).colorScheme.onBackground),
                 ),
               ),
               // Form
               const CustomTextField(
                   title: 'Email', hint: 'youremail@email.com'),
-              const CustomTextField(
-                  title: 'Password',
+              CustomTextField(
+                  title: t(context)!.password,
                   hint: '**********',
                   obsecureText: true,
-                  margin: EdgeInsets.only(top: 16)),
+                  margin: const EdgeInsets.only(top: 16)),
               // Log in Button
               Container(
                 margin: const EdgeInsets.only(top: 32, bottom: 6),
@@ -71,12 +69,15 @@ class LoginModal extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10)),
                     backgroundColor: Theme.of(context).primaryColorLight,
                   ),
-                  child: Text('Login',
-                      style: TextStyle(
-                          color: Theme.of(context).colorScheme.secondary,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          fontFamily: 'inter')),
+                  child: Text(
+                    t(context)!.logIn,
+                    style: Theme.of(context)
+                        .typography
+                        .tall
+                        .bodyLarge!
+                        .copyWith(
+                            color: Theme.of(context).colorScheme.secondary),
+                  ),
                 ),
               ),
               TextButton(
@@ -86,16 +87,17 @@ class LoginModal extends StatelessWidget {
                 ),
                 child: RichText(
                   text: TextSpan(
-                    text: 'Forgot your password? ',
+                    text: t(context)!.forgot_password,
                     style: const TextStyle(color: Colors.grey),
                     children: [
                       TextSpan(
-                          style: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontWeight: FontWeight.w700,
-                            fontFamily: 'inter',
-                          ),
-                          text: 'Reset')
+                          style: Theme.of(context)
+                              .typography
+                              .tall
+                              .bodyLarge!
+                              .copyWith(
+                                  color: Theme.of(context).colorScheme.primary),
+                          text: t(context)!.reset)
                     ],
                   ),
                 ),

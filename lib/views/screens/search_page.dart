@@ -27,10 +27,7 @@ class _SearchPageState extends State<SearchPage> {
         elevation: 0,
         centerTitle: true,
         title: Text(t(context)!.search_recipe,
-            style: const TextStyle(
-                fontFamily: 'inter',
-                fontWeight: FontWeight.w400,
-                fontSize: 16)),
+            style: Theme.of(context).primaryTextTheme.titleLarge),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
           onPressed: () {
@@ -74,10 +71,8 @@ class _SearchPageState extends State<SearchPage> {
                                   "$runtimeType : ${searchInputController.text}");
                               setState(() {});
                             },
-                            style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400),
+                            style:
+                                Theme.of(context).primaryTextTheme.titleMedium,
                             maxLines: 1,
                             textInputAction: TextInputAction.search,
                             decoration: InputDecoration(

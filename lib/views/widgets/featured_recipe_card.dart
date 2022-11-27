@@ -49,12 +49,7 @@ class FeaturedRecipeCard extends StatelessWidget {
                     data.title!,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                        height: 150 / 100,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: 'inter'),
+                    style: Theme.of(context).primaryTextTheme.titleSmall,
                   ),
                   // Recipe Calories and Time
                   Container(
