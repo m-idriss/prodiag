@@ -7,7 +7,7 @@ import 'package:prodiag/views/screens/full_screen_image.dart';
 import 'package:prodiag/views/utils/app_color.dart';
 import 'package:prodiag/utils/translate.dart';
 
-import '../../models/helper/recipe_helper.dart';
+import '../widgets/detail_tab.dart';
 import '../widgets/ingridient_tile.dart';
 import '../widgets/review_tile.dart';
 import '../widgets/step_tile.dart';
@@ -231,17 +231,11 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
             ),
             // IndexdStack based on TabBar index
           ),
-          DetailsTab(
-              tabController: _tabController,
-              data: widget.data is MovieModel
-                  ? RecipeHelper.featuredRecipe[0]
-                  : widget.data),
+          DetailTab(indexTabSelected: _tabController.index, data: widget.data),
         ],
       ),
     );
   }
-
-  rowMovies() {}
 
   Row getRow(Recipe data) {
     Row row = Row(
@@ -287,58 +281,5 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
       ),
     ]);
     return row;
-  }
-}
-
-class DetailsTab extends StatelessWidget {
-  final TabController _tabController;
-  final Recipe data;
-
-  const DetailsTab(
-      {Key? key, required TabController tabController, required this.data})
-      : _tabController = tabController,
-        super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return IndexedStack(
-      index: _tabController.index,
-      children: [
-        // Ingridients
-        ListView.builder(
-          shrinkWrap: true,
-          padding: EdgeInsets.zero,
-          itemCount: data.ingridients!.length,
-          physics: const NeverScrollableScrollPhysics(),
-          itemBuilder: (context, index) {
-            return IngridientTile(
-              data: data.ingridients![index],
-            );
-          },
-        ),
-        // Tutorials
-        ListView.builder(
-          shrinkWrap: true,
-          padding: EdgeInsets.zero,
-          itemCount: data.tutorial!.length,
-          physics: const NeverScrollableScrollPhysics(),
-          itemBuilder: (context, index) {
-            return StepTile(
-              data: data.tutorial![index],
-            );
-          },
-        ),
-        // Reviews
-        ListView.builder(
-          shrinkWrap: true,
-          padding: EdgeInsets.zero,
-          itemCount: data.reviews!.length,
-          physics: const NeverScrollableScrollPhysics(),
-          itemBuilder: (context, index) {
-            return ReviewTile(data: data.reviews![index]);
-          },
-        )
-      ],
-    );
   }
 }

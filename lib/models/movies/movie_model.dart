@@ -1,4 +1,6 @@
+import '../../utils/logger.dart';
 import '../core/recipe.dart';
+import '../helper/recipe_helper.dart';
 
 class MovieModel extends Recipe {
   MovieModel(
@@ -32,4 +34,9 @@ class MovieModel extends Recipe {
             description: description);
   final String id;
   final String urlImage;
+
+  Recipe getRecipe() {
+    info("$runtimeType - id : $id");
+    return RecipeHelper.featuredRecipe[0];
+  }
 }
