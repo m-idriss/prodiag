@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:prodiag/models/core/recipe.dart';
-import 'package:prodiag/models/helper/recipe_helper.dart';
 import 'package:prodiag/utils/translate.dart';
 import '../../models/movies/movie_cubit.dart';
 import '../../models/movies/movie_state.dart';
@@ -18,7 +16,6 @@ class BookmarksPage extends StatefulWidget {
 
 class _BookmarksPageState extends State<BookmarksPage> {
   TextEditingController searchInputController = TextEditingController();
-  List<Recipe> bookmarkedRecipe = RecipeHelper.bookmarkedRecipe;
 
   @override
   Widget build(BuildContext context) {

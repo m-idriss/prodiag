@@ -218,15 +218,9 @@ class _RecipeDetailPageState extends State<RecipeDetailPage>
               labelStyle: Theme.of(context).primaryTextTheme.labelLarge,
               indicatorColor: Colors.black,
               tabs: [
-                Tab(
-                  text: t(context)!.ingridients,
-                ),
-                Tab(
-                  text: t(context)!.tutorial,
-                ),
-                Tab(
-                  text: t(context)!.reviews,
-                ),
+                Tab(text: t(context)!.ingridients),
+                Tab(text: t(context)!.tutorial),
+                Tab(text: t(context)!.reviews),
               ],
             ),
             // IndexdStack based on TabBar index
