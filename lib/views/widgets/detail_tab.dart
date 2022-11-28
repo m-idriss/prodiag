@@ -25,9 +25,9 @@ class DetailTab extends StatelessWidget {
           padding: EdgeInsets.zero,
           itemCount: data.ingridients!.length,
           physics: const NeverScrollableScrollPhysics(),
-          itemBuilder: (context, index) {
+          itemBuilder: (context, i) {
             return IngridientTile(
-              data: data.ingridients![index],
+              data: data.ingridients![i],
             );
           },
         ),
@@ -37,9 +37,9 @@ class DetailTab extends StatelessWidget {
           padding: EdgeInsets.zero,
           itemCount: data.tutorial!.length,
           physics: const NeverScrollableScrollPhysics(),
-          itemBuilder: (context, index) {
+          itemBuilder: (context, i) {
             return StepTile(
-              data: data.tutorial![index],
+              data: data.tutorial![i],
             );
           },
         ),
@@ -49,9 +49,9 @@ class DetailTab extends StatelessWidget {
           padding: EdgeInsets.zero,
           itemCount: data.reviews!.length,
           physics: const NeverScrollableScrollPhysics(),
-          itemBuilder: (context, index) {
+          itemBuilder: (context, i) {
             return ReviewTile(
-              data: data.reviews![index],
+              data: data.reviews![i],
             );
           },
         )
