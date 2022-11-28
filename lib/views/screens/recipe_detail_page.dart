@@ -8,9 +8,6 @@ import 'package:prodiag/views/utils/app_color.dart';
 import 'package:prodiag/utils/translate.dart';
 
 import '../widgets/detail_tab.dart';
-import '../widgets/ingridient_tile.dart';
-import '../widgets/review_tile.dart';
-import '../widgets/step_tile.dart';
 
 class RecipeDetailPage extends StatefulWidget {
   final Recipe data;
